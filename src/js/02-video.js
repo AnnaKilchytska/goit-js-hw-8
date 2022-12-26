@@ -13,10 +13,12 @@ player.on('play', function() {
 
 function onLoadPageVideoSetTime() {
     let seconds = localStorage.getItem(CURRENT_PLAYTIME);
-    player.setCurrentTime(seconds).then(function(seconds) {   
-    }).catch(function(error) {
-        console.log(error);
-    });
+    if (seconds) {
+        player.setCurrentTime(seconds).then(function(seconds) {   
+        }).catch(function(error) {
+            console.log(error);
+        });
+    }
 }
 
 
