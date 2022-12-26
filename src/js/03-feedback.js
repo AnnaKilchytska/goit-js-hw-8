@@ -10,7 +10,7 @@ const FEEDBACK_FORM = "feedback-form-state";
 const formData = {};
 const savedFormData = JSON.parse(localStorage.getItem(FEEDBACK_FORM));
 
-form.addEventListener("input", onFormInput);
+form.addEventListener("input", throttle(onFormInput, 500));
 window.addEventListener("load", onPageLoad);
 form.addEventListener("submit", onFormSubmit);
 
