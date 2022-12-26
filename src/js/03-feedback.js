@@ -25,8 +25,11 @@ function onFormInput(e) {
 };
 
 function onPageLoad() {
-    if (savedFormData) {
+    if (savedFormData.email) {
         email.value = savedFormData.email;
+    }
+
+    if (savedFormData.message) {
         message.value = savedFormData.message;
     }
 };
